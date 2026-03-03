@@ -1,0 +1,36 @@
+{
+ 
+    "version": "2.0.0",
+ 
+    "tasks": [
+ 
+        {
+ 
+            "label": "Build SystemC Test",
+            "type": "shell",
+            "command": "g++ src/*.cpp -Iinc -I/opt/systemc-2.3.4/include -L/opt/systemc-2.3.4/lib-mingw64 -lsystemc -o test.exe",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": {
+                    "executable": "C:/msys64/usr/bin/bash.exe",
+                    "args": ["--login", "-c"]
+                },
+                "env": {
+                    "MSYSTEM": "UCRT64",
+                    "CHERE_INVOKING": "1"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+ 
+                "reveal": "always",
+ 
+                "panel": "shared" 
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
